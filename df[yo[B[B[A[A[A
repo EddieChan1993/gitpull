@@ -1,0 +1,52 @@
+[1mdiff --git a/app/admin/view/git_think/edit_page.html b/app/admin/view/git_think/edit_page.html[m
+[1mindex 7399b4c..2f27446 100644[m
+[1m--- a/app/admin/view/git_think/edit_page.html[m
+[1m+++ b/app/admin/view/git_think/edit_page.html[m
+[36m@@ -40,6 +40,15 @@[m
+                         </div>[m
+                     </div>[m
+                     <div class="form-group">[m
+[32m+[m[32m                        <label class="col-xs-3 control-label">项目地址</label>[m
+[32m+[m[32m                        <div class="col-xs-9">[m
+[32m+[m[32m                            <div class="input-group">[m
+[32m+[m[32m                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>[m
+[32m+[m[32m                                <input type="text" value="{$path}" name="path" class="form-control"/>[m
+[32m+[m[32m                            </div>[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <div class="form-group">[m
+                         <label class="col-xs-3 control-label">备注</label>[m
+                         <div class="col-xs-9 col-xs-12">[m
+                             <textarea class="form-control" name="remark" rows="5">{$remark}</textarea>[m
+[1mdiff --git a/app/admin/view/git_think/home_page.html b/app/admin/view/git_think/home_page.html[m
+[1mindex 74ada86..ded4650 100644[m
+[1m--- a/app/admin/view/git_think/home_page.html[m
+[1m+++ b/app/admin/view/git_think/home_page.html[m
+[36m@@ -83,6 +83,15 @@[m
+                                             </div>[m
+                                         </div>[m
+                                         <div class="form-group">[m
+[32m+[m[32m                                            <label class="col-md-3 control-label">项目地址</label>[m
+[32m+[m[32m                                            <div class="col-md-9">[m
+[32m+[m[32m                                                <div class="input-group">[m
+[32m+[m[32m                                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>[m
+[32m+[m[32m                                                    <input type="text" name="path" class="form-control"/>[m
+[32m+[m[32m                                                </div>[m
+[32m+[m[32m                                            </div>[m
+[32m+[m[32m                                        </div>[m
+[32m+[m[32m                                        <div class="form-group">[m
+                                             <label class="col-md-3 control-label">备注</label>[m
+                                             <div class="col-md-9 col-xs-12">[m
+                                                 <textarea class="form-control" name="remark" rows="5"></textarea>[m
+[1mdiff --git a/app/home/service/GitpullService.php b/app/home/service/GitpullService.php[m
+[1mindex cc1c049..443dd42 100644[m
+[1m--- a/app/home/service/GitpullService.php[m
+[1m+++ b/app/home/service/GitpullService.php[m
+[36m@@ -20,6 +20,7 @@[m [mclass GitpullService extends BaseService[m
+         $flag = false;[m
+         try {[m
+             $data = Db::name('project')[m
+[32m+[m[32m                ->where(['key'=>$key])[m
+                 ->field('secret_token,path')[m
+                 ->find();[m
+ [m

@@ -20,6 +20,7 @@ class GitpullService extends BaseService
         $flag = false;
         try {
             $data = Db::name('project')
+                ->where(['key'=>$key])
                 ->field('secret_token,path')
                 ->find();
 
