@@ -174,7 +174,7 @@ class Base extends BaseController
     public function delThink()
     {
         $res = CurdService::name($this->model)
-            ->del(input('id'),true);
+            ->del(input('id'));
         if ($res) {
             $this->success("删除成功");
         }else{
