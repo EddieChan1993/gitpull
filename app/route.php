@@ -11,4 +11,4 @@
 header("Access-Control-Allow-Origin:*");
 use think\Route;
 
-Route::get('gitpull/:key', '@home/v1.gitpull/searchProject');//执行拉去项目脚本
+Route::post('gitpull/:key', '@home/v1.gitpull/searchProject');//执行拉去项目脚本
