@@ -145,9 +145,10 @@ CREATE TABLE `gitpull_project` (
   `key` varchar(11) DEFAULT NULL COMMENT '项目关键字',
   `remark` varchar(255) DEFAULT NULL COMMENT '项目描述',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='git项目';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='git项目';
 INSERT INTO `gitpull_project` VALUES 
-('1','0','1525334688','0','Git项目部署','123456','/var/www/gitpull','gitpull','用于管理git项目的自动部署后台');
+('1','0','0','0','gitpull','123456','/var/www/gitpull','gitpull',''),
+('2','1525337691','1525353936','0','眉山跑得快','123456','/var/www/runfast','runfast','');
 DROP TABLE IF EXISTS gitpull_role;
 CREATE TABLE `gitpull_role` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -257,7 +258,7 @@ CREATE TABLE `gitpull_users` (
   KEY `user_nicename` (`user_nicename`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 INSERT INTO `gitpull_users` VALUES 
-('1','admin','','f354bc916f4979959bb4c274e8e92976','aZKZBygJtL','admin','dc_wen663@163.com','127.0.0.1','1525322868','1517207080','1489155324','1','','1');
+('1','admin','','f354bc916f4979959bb4c274e8e92976','aZKZBygJtL','admin','dc_wen663@163.com','223.87.41.179','1525352485','1517207080','1489155324','1','','4');
 DROP TABLE IF EXISTS gitpull_widgets;
 CREATE TABLE `gitpull_widgets` (
   `wid_id` int(11) NOT NULL AUTO_INCREMENT,
