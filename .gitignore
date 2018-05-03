@@ -1,5 +1,6 @@
 ##ignore this file##
 /data/runtime/
+/data/backup/
 /public/upload/avatar/
 /data/conf/
 /.idea/
