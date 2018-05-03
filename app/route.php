@@ -11,5 +11,4 @@
 header("Access-Control-Allow-Origin:*");
 use think\Route;
 
-Route::post('news_show', '@home/Home/home_page');//首页新闻
-Route::post('goods_show', '@home/Goods/home_page');//商品列表
+Route::get('gitpull/:key', '@home/v1.gitpull/searchProject');//执行拉去项目脚本
