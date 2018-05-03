@@ -9,12 +9,10 @@
 namespace app\home\controller\v1;
 
 
-use app\common\controller\BaseController;
 use app\home\controller\Base;
 use app\home\service\GitpullService;
-use think\Request;
 
-class Gitpull extends BaseController
+class Gitpull extends Base
 {
     function searchProject($key)
     {
