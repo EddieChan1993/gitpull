@@ -142,7 +142,7 @@ class Base extends BaseController
     {
         $whereData = ['id' => input('id')];
         $data = CurdService::name($this->model)
-            ->getOneData($whereData, 'id,name');
+            ->getOneData($whereData);
         return view('edit_page', $data);
     }
 

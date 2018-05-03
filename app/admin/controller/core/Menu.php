@@ -15,20 +15,9 @@ class Menu extends Base
     //菜单显示
     function home_page()
     {
-        if (!extension_loaded('redis')) {
-            //没装memcache
-            $menu_list = Db::name('menu')->select();
-            $menu_list = menu_left($menu_list, 'id', 'parentid');
-        }else{
-            $mem = new Redis();
-            if ($mem->has('menu')) {
-                $menu_list = $mem->get('menu');
-            }else{
-                $menu_list = Db::name('menu')->select();
-                $menu_list = menu_left($menu_list, 'id', 'parentid');
-                $mem->set('menu', $menu_list);
-            }
-        }
+        //没装memcache
+        $menu_list = Db::name('menu')->select();
+        $menu_list = menu_left($menu_list, 'id', 'parentid');
 
         $menu_nums = Db::name('menu')->count();
         $controller = ROOT_PATH . DS . 'app/admin/controller';
