@@ -30,6 +30,7 @@ class GitThink extends Base
             ['name', 'require', '项目名称必填'],
             ['secret_token', 'require', '登录密钥必填'],
             ['key', 'require|unique:project', '登录key必填'],
+            ['path', 'require', '项目路径'],
         ]);
 
         if (!$validate->check($_POST)) {

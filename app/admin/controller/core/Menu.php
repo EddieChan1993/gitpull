@@ -42,7 +42,7 @@ class Menu extends Base
             $this->error('当前菜单下存在子菜单,请谨慎操作');
         }else{
             if (Db::name('menu')->delete(input('id'))) {
-//                rm_cache_menu();
+                rm_cache_menu();
                 $this->success('当前菜单删除成功',url('admin/Menu/menu_page'));
             }else{
                 $this->error('当前菜单删除失败');

@@ -3,7 +3,7 @@
 {block name='content'}
 <div class="row animated fadeIn">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="panel panel-default tabs">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">{$tab_1}
@@ -20,6 +20,7 @@
                                 <th>名称</th>
                                 <th>KEY</th>
                                 <th>Secret</th>
+                                <th width="200px">项目地址</th>
                                 <th width="200px">描述</th>
                                 <th>时间</th>
                                 <th>操作</th>
@@ -32,6 +33,7 @@
                                 <td>{$v.name}</td>
                                 <td><span class="label label-info">{$v.key}</span></td>
                                 <td><span class="label label-success">{$v.secret_token}</span></td>
+                                <td>{$v.path}</td>
                                 <td>{$v.remark}</td>
                                 <td>{$v.c_time|date="Y-m-d H:i:s",###}</td>
                                 <td>

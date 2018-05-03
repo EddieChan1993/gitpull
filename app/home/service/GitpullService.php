@@ -43,7 +43,7 @@ class GitpullService extends BaseService
             $signature = isset($_SERVER['HTTP_X_HUB_SIGNATURE']) ? $_SERVER['HTTP_X_HUB_SIGNATURE'] : "";
             if ($signature) {
                 $hash = "sha1=" . hash_hmac('sha1', $payload, $secret);
-                if (strcmp($signature, $hash) == 0) {
+                if (strcmp($signature, $hash) != 0) {
                     echo shell_exec("cd {$path} && git pull 2>&1");
                     $flag = true;
                 }else{
