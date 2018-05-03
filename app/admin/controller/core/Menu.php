@@ -42,7 +42,7 @@ class Menu extends Base
             $this->error('当前菜单下存在子菜单,请谨慎操作');
         }else{
             if (Db::name('menu')->delete(input('id'))) {
-                rm_cache_menu();
+//                rm_cache_menu();
                 $this->success('当前菜单删除成功',url('admin/Menu/menu_page'));
             }else{
                 $this->error('当前菜单删除失败');
@@ -71,7 +71,7 @@ class Menu extends Base
             $save_menu['nav_list'] = get_menu_nav($menu_id, input('parentid'));
             Db::name('menu')->update($save_menu);
 
-            rm_cache_menu();
+//            rm_cache_menu();
             $this->success('菜单添加成功');
         }else{
             $this->success('菜单添加失败');
@@ -118,7 +118,7 @@ class Menu extends Base
         }
 
         if (Db::name('menu')->update($edit_data)) {
-            rm_cache_menu();
+//            rm_cache_menu();
             $this->success('菜单编辑成功');
         }else{
             $this->error('菜单未做任何修改');
@@ -128,7 +128,7 @@ class Menu extends Base
     function update_order()
     {
         if (Db::name('menu')->update($_POST)) {
-            rm_cache_menu();
+//            rm_cache_menu();
             $this->success('菜单排序编辑成功');
         }else{
             $this->error('菜单排序编辑未做任何修改');
